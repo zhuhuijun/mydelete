@@ -26,7 +26,11 @@ namespace AsyncDemo2
                 //Action<Task<TResult>>委托，m代表mycaller即调用者，在这里m=t.
             });
             MethodHelp.yb();
-            MethodHelp.YBReturn();
+            MethodHelp.YBReturn(new Action<string>((s) =>
+            {
+                Console.WriteLine(">>>>回调行结果：{0}", s);
+            }));
+            MethodHelp.Test();
             Console.ReadLine();
         }
 
