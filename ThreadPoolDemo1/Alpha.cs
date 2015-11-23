@@ -18,6 +18,7 @@ namespace ThreadPoolDemo1
         /// <summary>信号灯
         /// </summary>
         public ManualResetEvent eventX;
+        //计算数量
         public static int iCount = 0;
         /// <summary>最大数量
         /// </summary>
@@ -48,6 +49,7 @@ namespace ThreadPoolDemo1
                 if (!HashCount.ContainsKey(Thread.CurrentThread.GetHashCode()))
                     HashCount.Add(Thread.CurrentThread.GetHashCode(), 0);
                 HashCount[Thread.CurrentThread.GetHashCode()] = ((int)HashCount[Thread.CurrentThread.GetHashCode()]) + 1;
+                //已存在的线程数量加1
             }
             Thread.Sleep(2000);
             // Interlocked.Increment() 操作是一个原子操作，具体请看下面说明 
